@@ -20,6 +20,8 @@ Route::get('/contact','PagesController@contact')->name("contact");
 
 Route::post('/contact','PagesController@store')->name("contact.store");
 
+Route::get('/thanks/{name}', 'PagesController@thanks')->name('thanks');
+
 Route::get('/signin', function () {
     return view('pages.signin');
 });
@@ -44,13 +46,13 @@ Route::get('/viewmessage/1', function () {
 Route::get('/viewmessage/2', function () {
     return view('pages.viewmessage2');
 });
-
-Route::post('/contact', function () {
-
-    $data = request() -> all();
-
-    echo 'Email: '. $data['email'] . '<br>';
-    echo 'Body: '. $data['body'];
-
-});
+//
+//Route::post('/contact', function () {
+//
+//    $data = request() -> all();
+//
+//    echo 'Email: '. $data['email'] . '<br>';
+//    echo 'Body: '. $data['body'];
+//
+//});
 
